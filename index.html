@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Technical University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="university.jpg" alt="HTU Logo">
+                <span>HTU</span>
+            </div>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#programs" class="nav-link">Programs</a></li>
+                <li><a href="#calculator" class="nav-link">Tuition</a></li>
+                <li><a href="#inquiry" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-button">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Horizon Technical University</h1>
+            <p>Shaping Tomorrow's Leaders Today</p>
+            <a href="#programs" class="cta-button">Explore Programs</a>
+        </div>
+    </section>
+
+    
+    <section id="programs" class="programs">
+        <div class="section-header">
+            <h2>Our Programs</h2>
+            <p>Choose from our wide range of cutting-edge programs</p>
+        </div>
+        <div class="programs-container">
+            <div class="program-box">
+                <div class="program-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Computer Science</h3>
+                <p>Artificial Intelligence, Software Engineering, Cybersecurity</p>
+                <ul class="program-features">
+                    <li>4 Year Program</li>
+                    <li>Industry Partners</li>
+                    <li>Modern Lab Facilities</li>
+                </ul>
+                <a href="#" class="program-link">Learn More →</a>
+            </div>
+
+            <div class="program-box">
+                <div class="program-icon">
+                    <i class="fas fa-business-time"></i>
+                </div>
+                <h3>Business Studies</h3>
+                <p>Finance, Marketing, International Business</p>
+                <ul class="program-features">
+                    <li>4 Year Program</li>
+                    <li>Industry Internships</li>
+                    <li>Global Exposure</li>
+                </ul>
+                <a href="#" class="program-link">Learn More →</a>
+            </div>
+
+            <div class="program-box">
+                <div class="program-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Engineering</h3>
+                <p>Mechanical, Electrical, Civil Engineering</p>
+                <ul class="program-features">
+                    <li>4 Year Program</li>
+                    <li>Advanced Labs</li>
+                    <li>Research Focus</li>
+                </ul>
+                <a href="#" class="program-link">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="section-header">
+            <h2>Tuition Calculator</h2>
+            <p>Estimate your education investment</p>
+        </div>
+        <div class="calculator-container">
+            <form id="tuitionForm">
+                <div class="form-group">
+                    <label for="program">Select Your Program</label>
+                    <select id="program" required>
+                        <option value="">Choose Program</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="business">Business Studies</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medicine">Medical Sciences</option>
+                        <option value="arts">Liberal Arts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="level">Study Level</label>
+                    <select id="level" required>
+                        <option value="">Select Level</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="graduate">Graduate</option>
+                        <option value="doctorate">Doctorate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="residency">Residency Status</label>
+                    <select id="residency" required>
+                        <option value="">Select Status</option>
+                        <option value="in-state">In-State</option>
+                        <option value="out-state">Out-of-State</option>
+                        <option value="international">International</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="housing">Housing Preference</label>
+                    <select id="housing">
+                        <option value="none">No Housing</option>
+                        <option value="shared">Shared Room</option>
+                        <option value="single">Single Room</option>
+                        <option value="apartment">Campus Apartment</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mealPlan">Meal Plan</label>
+                    <select id="mealPlan">
+                        <option value="none">No Meal Plan</option>
+                        <option value="basic">Basic Plan</option>
+                        <option value="standard">Standard Plan</option>
+                        <option value="premium">Premium Plan</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="calculate-button">Calculate Cost</button>
+            </form>
+            <div id="tuitionResult" class="result-hidden"></div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form  -->
+    <section id="inquiry" class="inquiry">
+        <div class="section-header">
+            <h2>Get in Touch</h2>
+            <p>We're here to answer your questions</p>
+        </div>
+        <div class="inquiry-container">
+            <form id="inquiryForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Program of Interest</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="business">Business Studies</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medicine">Medical Sciences</option>
+                        <option value="arts">Liberal Arts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <center><p>&copy; 2024 Horizon Technical University. All rights reserved.</p></center>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

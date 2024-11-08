@@ -1,0 +1,564 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(26, 26, 26, 0.305);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00a8ff;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00a8ff;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    background: #00a8ff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #0088cc;
+    transform: translateY(-2px);
+}
+
+
+.hero {
+    height: 100vh;
+    background: url('university.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 0;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #00a8ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+}
+
+
+.programs {
+    padding: 5rem 2rem;
+    background: #2d2d2d;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section-header.visible {
+    animation: fadeInUp 0.8s forwards;
+}
+
+.programs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.program-box {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.program-box.visible {
+    animation: fadeInUp 0.8s forwards;
+}
+
+.program-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.program-icon {
+    font-size: 2.5rem;
+    color: #00a8ff;
+    margin-bottom: 1rem;
+}
+
+.program-features {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.program-features li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.program-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #00a8ff;
+}
+
+
+.calculator {
+    padding: 5rem 2rem;
+    background: #1a1a1a;
+}
+
+.calculator-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #2d2d2d;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #cccccc;
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+select:focus, input:focus, textarea:focus {
+    border-color: #00a8ff;
+    outline: none;
+}
+
+.calculate-button, .submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: #00a8ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calculate-button:hover, .submit-button:hover {
+    background: #0088cc;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 968px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .programs-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2d2d2d;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background: #ffffff;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .calculator-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo span {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .program-box {
+        padding: 1.5rem;
+    }
+}
+
+
+.inquiry {
+    padding: 5rem 2rem;
+    background: #2d2d2d;
+}
+
+.inquiry .section-header {
+    margin-bottom: 3rem;
+}
+
+.inquiry-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-out;
+}
+
+#inquiryForm {
+    display: grid;
+    gap: 1.5rem;
+}
+
+#inquiryForm .form-group {
+    position: relative;
+}
+
+#inquiryForm input,
+#inquiryForm select,
+#inquiryForm textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #2d2d2d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#inquiryForm input:focus,
+#inquiryForm select:focus,
+#inquiryForm textarea:focus {
+    border-color: #00a8ff;
+    box-shadow: 0 0 0 2px rgba(0, 168, 255, 0.1);
+    outline: none;
+}
+
+#inquiryForm input::placeholder,
+#inquiryForm textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#inquiryForm textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#inquiryForm .submit-button {
+    background: #00a8ff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#inquiryForm .submit-button:hover {
+    background: #0088cc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+}
+
+#inquiryForm .submit-button:active {
+    transform: translateY(0);
+}
+
+@keyframes inputFocus {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+.form-success {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4CAF50;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.form-success i {
+    color: #4CAF50;
+    font-size: 1.5rem;
+}
+
+
+.form-error {
+    color: #ff4444;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-error i {
+    font-size: 1rem;
+}
+
+.submit-button.loading {
+    background: #666;
+    pointer-events: none;
+}
+
+.submit-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+
+@media (min-width: 768px) {
+    #inquiryForm {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #inquiryForm .form-group:last-of-type,
+    #inquiryForm .submit-button {
+        grid-column: span 2;
+    }
+
+    #inquiryForm textarea {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .inquiry-container {
+        padding: 1.5rem;
+    }
+
+    #inquiryForm input,
+    #inquiryForm select,
+    #inquiryForm textarea {
+        padding: 0.8rem 1rem;
+    }
+
+    #inquiryForm .submit-button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .inquiry {
+        padding: 3rem 1rem;
+    }
+
+    .inquiry-container {
+        padding: 1rem;
+    }
+
+    #inquiryForm {
+        gap: 1rem;
+    }
+
+    #inquiryForm textarea {
+        min-height: 120px;
+    }
+}
